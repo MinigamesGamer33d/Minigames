@@ -1,18 +1,24 @@
+const timeTag = document.getElementsByClassName('time')[0]
+const p = document.createElement('p')
+
+let s;
+
 function startTimer(){
-    let s = 5
+    s = 60
     
-    setInterval(() => {
+    let sTimer = setInterval(() => {
         s--
+        p.innerHTML = `0:${s}`
+        timeTag.appendChild(p)
         
+        if(s == 0){
+            alert('gameover')
+            clearInterval(sTimer)
+        }
         
         
     }, 1000);
     
-    console.log(s)
-    if(s <= 0){
-        clearInterval()
-
-    }
 }
 
 startTimer()

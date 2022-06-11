@@ -9,7 +9,7 @@ function appendMidCode(code){
     let div = document.createElement("div")
 
     div.setAttribute("class", "codeq")
-    div.innerHTML = `<p>${code}</p>`
+    div.innerHTML = `${code}`
 
     return divCodes.appendChild(div)
 
@@ -19,7 +19,7 @@ function appendBreakCodes(code, i){
 
     const codeSequence = document.getElementsByClassName('codeSequence')[0]
     let h2 = document.createElement('h2')
-    h2.setAttribute('class', `${i}`)
+    h2.setAttribute('id', `${i}`)
 
     h2.innerHTML = code
     return codeSequence.appendChild(h2)
@@ -28,9 +28,10 @@ function appendBreakCodes(code, i){
 function newSelectCode(pos){
 
     const code = document.getElementsByClassName('code')[0]
-    let codestring = document.getElementsByClassName(pos)[0].innerHTML
+    let codestring = document.getElementById(pos).innerHTML
     console.log(codestring)
     let p = document.createElement('p')
+    p.setAttribute('id', 'truevalue')
 
     p.innerHTML = codestring
     code.appendChild(p)
